@@ -1,19 +1,19 @@
-# mstack Example Application
+# MStack Example Application
 
-Welcome to the example application for **mstack**, a flexible Java framework that allows developers to build applications that can run as either a monolith or microservices with the same codebase. This repository demonstrates how to use framework with a sample backend and a React Vite frontend.
+Welcome to the example application for **MStack**, a flexible Java framework that allows developers to build applications that can run as either a monolith or microservices with the same codebase. This repository demonstrates how to use framework with a sample backend and a React Vite frontend.
 
 ## Framework Overview
 
-**MyFramework** empowers developers to craft a single, robust codebase that seamlessly adapts to both **monolithic** and **microservices** architectures—without compromise. Engineered for modern distributed systems, this Java framework abstracts complexity and delivers cutting-edge features out of the box:
+**MStack** empowers developers to craft a single, robust codebase that seamlessly adapts to both **monolithic** and **microservices** architectures—without compromise. Engineered for modern distributed systems, this Java framework abstracts complexity and delivers cutting-edge features out of the box:
 
 - **Dynamic Deployment**: Write once, deploy anywhere. Toggle between a tightly coupled monolith or a fully distributed microservices ecosystem with zero code changes, leveraging Maven profiles for build-time flexibility.
 - **Service Orchestration**: Built-in **service discovery**, **load balancing**, and **intelligent routing** eliminate manual configuration. MyFramework ensures services locate and scale effortlessly, even under heavy load.
-- **Versatile Connectivity**: Expose your backend to the world via **RSocket**, **HTTP**, or **WebSocket**. Whether it’s real-time streams, RESTful APIs, or reactive messaging, MyFramework supports it all with minimal overhead.
+- **Versatile Connectivity**: Expose your backend to the world via **RSocket**, **HTTP**, or **WebSocket**. Whether it’s real-time streams, RESTful APIs, or reactive messaging, MStack supports it all with minimal overhead.
 - **Persistent Powerhouse**: Our integrated persistence layer auto-generates optimized queries, slashing boilerplate code while unlocking advanced features like schema evolution, transaction management, and cross-service consistency.
 - **Distributed Resilience**: A native **distributed service discovery** mechanism pairs with a **distributed event streaming** system to enable seamless inter-service communication—no bottlenecks, no single points of failure. Every component thrives in a decentralized microservices topology.
-- **Fault Tolerance**: Designed with a "no single point of failure" philosophy, MyFramework distributes critical functions across nodes, ensuring high availability and uninterrupted operation.
+- **Fault Tolerance**: Designed with a "no single point of failure" philosophy, MStack distributes critical functions across nodes, ensuring high availability and uninterrupted operation.
 
-With MyFramework, you’re not just building applications—you’re architecting scalable, resilient systems that adapt to your needs, from rapid prototyping to production-grade microservices.
+With MStack, you’re not just building applications—you’re architecting scalable, resilient systems that adapt to your needs, from rapid prototyping to production-grade microservices.
 
 ## Prerequisites
 
