@@ -1,6 +1,6 @@
-package com.randomdelta.mstack.examples.basics.firstService.messages.query;
+package com.randomdelta.mstack.examples.basics.secondService.messages.event;
 
-import com.randomdelta.mstack.core.query.Query;
+import com.randomdelta.mstack.core.event.Event;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class FirstQuery extends Query {
+public class SecondEvent extends Event {
 	private String firstName;
 }

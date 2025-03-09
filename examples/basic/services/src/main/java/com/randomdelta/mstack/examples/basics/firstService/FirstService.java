@@ -19,9 +19,9 @@ public class FirstService extends ServiceProvider {
 		registerCommandHandler(FirstCommandHandler.class);
 
 		// register all event handlers
-//		registerEventHandler("FirstService", FirstEventHandler.class.getSimpleName(), FirstEventHandler.class);
+		registerEventHandler("SecondService", "SecondEvent", FirstEventHandler.class);
 
 		// register all query handlers
-//		registerQueryHandler(FirstQueryHandler.class);
+		registerQueryHandler(FirstQueryHandler.class);
 	}
 }

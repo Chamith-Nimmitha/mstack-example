@@ -4,6 +4,7 @@ import com.randomdelta.mstack.MicroServer;
 import com.randomdelta.mstack.MicroServerConfig;
 import com.randomdelta.mstack.commons.RequestHeaders;
 import com.randomdelta.mstack.commons.TMessage;
+import com.randomdelta.mstack.core.command.Command;
 import com.randomdelta.mstack.core.server.ServerConfig;
 import com.randomdelta.mstack.examples.basics.firstService.messages.command.FirstCommand;
 
@@ -11,7 +12,7 @@ import com.randomdelta.mstack.examples.basics.firstService.messages.command.Firs
  * @author Chamith_Nimmitha
  * @created 09/Mar/2025
  */
-public class App {
+public class CommandExample {
 
 	public static void main(String[] args) throws InterruptedException {
 		MicroServer microServer = MicroServer.builder()
@@ -29,7 +30,7 @@ public class App {
 		FirstCommand firstCommand = new FirstCommand("Chamith", "Kooragoda", 27, "Galle");
 
 		TMessage command = TMessage.builder()
-				.addAttr(RequestHeaders.MESSAGE_TYPE, "COMMAND")
+				.addAttr(RequestHeaders.MESSAGE_TYPE, Command.type)
 				.addAttr(RequestHeaders.COMMAND, FirstCommand.class.getSimpleName())
 				.withData(firstCommand)
 				.build();

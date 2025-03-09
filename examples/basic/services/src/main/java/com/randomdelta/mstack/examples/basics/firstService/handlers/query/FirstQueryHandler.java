@@ -16,6 +16,8 @@ public class FirstQueryHandler extends QueryHandler<FirstQuery, GenericResponse>
 	@Override
 	public Publisher<GenericResponse> execute(QueryContext queryContext, FirstQuery firstQuery) {
 		// retrieve data from the database
+
+		System.out.println("FirstQueryHandler: " + firstQuery);
 		return Mono.just(
 				GenericResponse.builder()
 						.success(true)
