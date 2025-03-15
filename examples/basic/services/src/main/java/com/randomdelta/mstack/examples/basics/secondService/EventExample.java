@@ -39,6 +39,6 @@ public class EventExample {
 
 		microServer.request("SecondService", command).subscribe(s -> System.out.println(s));
 
-		Thread.sleep(4000);
+		Thread.sleep(45000);
 	}
 }

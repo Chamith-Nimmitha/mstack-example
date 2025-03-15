@@ -37,6 +37,6 @@ public class CommandExample {
 
 		microServer.request("FirstService", command).subscribe(s -> System.out.println(s));
 
-		Thread.sleep(4000);
+		Thread.sleep(45000);
 	}
 }
