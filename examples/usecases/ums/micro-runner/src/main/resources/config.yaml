@@ -1,0 +1,19 @@
+server:
+  serverId: "server1"
+  servicePort: 4000
+
+  functions:
+#    - name: "UserService"
+#      type: "com.randomdelta.userservice.UserService"
+#
+#    - name: "UserService"
+#      type: "com.randomdelta.userservice.UserService"
+
+  providers:
+    - name: "UserService"
+      type: "com.randomdelta.pos.auth.service.UserService"
+
+    - name: "notificationService"
+      type: "com.randomdelta.pos.notification.service.NotificationService"
+
+#  authenticator: "com.randomdelta.authenticator"
