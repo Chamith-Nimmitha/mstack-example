@@ -1,0 +1,22 @@
+server:
+  serverId: "server1"
+  servicePort: 4000
+
+  functions:
+
+  providers:
+    - name: "UserService"
+      type: "com.randomdelta.mstack.examples.usecases.ums.userservice.UserService"
+
+#  authenticator: "com.randomdelta.authenticator"
+
+
+discovery:
+
+# default membership port is 4801
+  membershipPort: 4801
+
+#  seeders:
+#    - "localhost:4801"
+#    - "host2:4802"
+#    - "host3:4803"

@@ -3,6 +3,7 @@ package com.randomdelta.mstack.examples.usecases.microrunner;
 import com.randomdelta.authenticator.Authenticator;
 import com.randomdelta.logger.LoggerFactory;
 import com.randomdelta.mstack.MicroServerConfig;
+import com.randomdelta.mstack.commons.Endpoint;
 import com.randomdelta.mstack.commons.exception.ClassUtilException;
 import com.randomdelta.mstack.commons.injector.InjectorImpl;
 import com.randomdelta.mstack.commons.utils.ClassUtils;
@@ -18,6 +19,7 @@ import org.slf4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * @author Chamith_Nimmitha
@@ -135,7 +137,10 @@ public class AppStarter {
 		}
 
 		if(discovery.getSeeders() != null && discovery.getSeeders().length > 0) {
-			seviceDiscoveryConfigBuilder.withSeeders(discovery.getSeeders());
+			seviceDiscoveryConfigBuilder.withSeeders(Arrays.stream(discovery.getSeeders()).map(st -> {
+				String[] split = st.split(":");
+				return Endpoint.create(split[0], Integer.parseInt(split[1]));
+			}).toArray(Endpoint[]::new));
 		}
 		return seviceDiscoveryConfigBuilder.build();
 	}

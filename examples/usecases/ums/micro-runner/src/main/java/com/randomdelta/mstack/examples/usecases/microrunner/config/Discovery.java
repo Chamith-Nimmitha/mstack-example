@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Discovery {
 	private int membershipPort;
-	private Endpoint[] seeders;
+	private String[] seeders;
 
 }
