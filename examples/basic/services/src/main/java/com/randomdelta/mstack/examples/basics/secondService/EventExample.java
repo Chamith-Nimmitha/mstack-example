@@ -29,6 +29,8 @@ public class EventExample {
 				.build();
 		microServer.start();
 
+		Thread.sleep(1000);
+
 		SecondCommand secondCommand = new SecondCommand("Chamith", "Kooragoda", 27, "Galle");
 
 		TMessage command = TMessage.builder()

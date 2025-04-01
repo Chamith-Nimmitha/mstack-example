@@ -2,6 +2,7 @@ package com.randomdelta.mstack.examples.usecases.microrunner;
 
 import com.randomdelta.authenticator.Authenticator;
 import com.randomdelta.logger.LoggerFactory;
+import com.randomdelta.mstack.DiscoveryMetaData;
 import com.randomdelta.mstack.MicroServerConfig;
 import com.randomdelta.mstack.commons.Endpoint;
 import com.randomdelta.mstack.commons.exception.ClassUtilException;
@@ -20,6 +21,9 @@ import org.slf4j.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author Chamith_Nimmitha
@@ -142,6 +146,24 @@ public class AppStarter {
 				return Endpoint.create(split[0], Integer.parseInt(split[1]));
 			}).toArray(Endpoint[]::new));
 		}
+
+		DiscoveryMetaData.DiscoveryMetaDataBuilder builder = DiscoveryMetaData.builder();
+		builder.servicePort(serverConfig.getServicePort());
+		builder.serverName(serverConfig.getServerId());
+		builder.data(discovery.getMeta());
+
+		if(serverConfig.getFunctions() != null) {
+			builder.functions(serverConfig.getFunctions().stream()
+					.map(function -> function.getName()).collect(Collectors.toList()));
+
+		}
+
+		if(serverConfig.getProviders() != null) {
+			builder.providers(serverConfig.getProviders().stream()
+							.map(provider -> provider.getName())
+							.collect(Collectors.toList()));
+		}
+		seviceDiscoveryConfigBuilder.withMetadata(builder.build());
 		return seviceDiscoveryConfigBuilder.build();
 	}
 

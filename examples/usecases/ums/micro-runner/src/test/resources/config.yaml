@@ -13,7 +13,7 @@ server:
     - name: "UserService"
       type: "com.randomdelta.mstack.examples.usecases.ums.userservice.UserService"
 
-    - name: "notificationService"
+    - name: "NotificationService"
       type: "com.randomdelta.mstack.examples.usecases.ums.notificationservice.NotificationService"
 
 #  authenticator: "com.randomdelta.authenticator"

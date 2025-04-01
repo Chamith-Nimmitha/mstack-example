@@ -1,11 +1,11 @@
 server:
-  serverId: "server1"
+  serverId: "server2"
   servicePort: 4001
 
   functions:
 
   providers:
-    - name: "notificationService"
+    - name: "NotificationService"
       type: "com.randomdelta.mstack.examples.usecases.ums.notificationservice.NotificationService"
 
 #  authenticator: "com.randomdelta.authenticator"
