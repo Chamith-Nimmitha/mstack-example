@@ -14,6 +14,8 @@ public class FirstService extends ServiceProvider {
 
 	public FirstService(Injector injector) {
 		super(injector);
+		injector.nameBind("fieldInjectNumber", 5);
+		injector.nameBind("paramInjectNumber", 10);
 
 		// register all command handlers
 		registerCommandHandler(FirstCommandHandler.class);
