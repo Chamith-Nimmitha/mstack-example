@@ -32,7 +32,6 @@
             <groupId>com.randomdelta</groupId>
             <artifactId>Logger-Log4j</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
