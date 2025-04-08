@@ -1,5 +1,7 @@
 package com.randomdelta.mstack.examples.usecases.microrunner;
 
+import com.randomdelta.mstack.core.app.App;
+
 /**
  * @author Chamith_Nimmitha
  * @created 30/Mar/2025
@@ -7,18 +9,10 @@ package com.randomdelta.mstack.examples.usecases.microrunner;
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
-		String configFileName;
-		if(args.length == 1) {
-			configFileName = args[0];
-		} else {
-			configFileName = Main.class.getResource("/config.yaml").getFile();
-		}
+		App app = App.APP;
+		app.createAppInstance(App.getConfigFileName(args));
+		app.start();
 
-		AppStarter appStarter = new AppStarter(configFileName);
-		appStarter.start();
-
-		while (true) {
-			Thread.sleep(10000);
-		}
+		Thread.sleep(2000);
 	}
 }

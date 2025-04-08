@@ -1,9 +1,7 @@
 package com.randomdelta.mstack.examples.usecases.microrunner;
 
 
-import com.randomdelta.mstack.commons.RequestHeaders;
-import com.randomdelta.mstack.commons.TMessage;
-import com.randomdelta.mstack.examples.usecases.ums.userservice.messages.command.CreateUser;
+import com.randomdelta.mstack.core.app.App;
 
 /**
  * @author Chamith_Nimmitha
@@ -11,11 +9,9 @@ import com.randomdelta.mstack.examples.usecases.ums.userservice.messages.command
  */
 class UserServiceTestRunner {
 	public static void main(String[] args) throws InterruptedException {
-		AppStarter appStarter = new AppStarter(UserServiceTestRunner.class.getResource("/user-config.yaml").getFile());
-		appStarter.start();
-		App app = appStarter.getApp();
-
-		Thread.sleep(20000);
+		App app = App.APP;
+		app.createAppInstance(UserServiceTestRunner.class.getResource("/user-config.yaml").getPath());
+		app.start();
 
 		while (true) {
 			Thread.sleep(10000);

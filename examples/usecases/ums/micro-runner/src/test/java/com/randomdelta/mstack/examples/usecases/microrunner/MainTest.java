@@ -1,8 +1,10 @@
 package com.randomdelta.mstack.examples.usecases.microrunner;
 
 
-import com.randomdelta.mstack.commons.RequestHeaders;
-import com.randomdelta.mstack.commons.TMessage;
+import com.randomdelta.mstack.common.Message;
+import com.randomdelta.mstack.common.RequestHeaders;
+import com.randomdelta.mstack.core.app.App;
+import com.randomdelta.mstack.core.server.Server;
 import com.randomdelta.mstack.examples.usecases.ums.userservice.messages.command.CreateUser;
 
 /**
@@ -11,22 +13,22 @@ import com.randomdelta.mstack.examples.usecases.ums.userservice.messages.command
  */
 class MainTest {
 	public static void main(String[] args) throws InterruptedException {
-		AppStarter appStarter = new AppStarter(MainTest.class.getResource("/config.yaml").getFile());
-		appStarter.start();
-		App app = appStarter.getApp();
+		App app = App.APP;
+		app.createAppInstance(App.getConfigFileName(args));
+		app.start();
+
+		Server server = app.getServer();
 
 		CreateUser createUser = new CreateUser("chamith", "123", "chamith@gmail.com");
-		TMessage message = TMessage.builder()
-				.addAttr(RequestHeaders.MESSAGE_TYPE, "COMMAND")
-				.addAttr(RequestHeaders.COMMAND, CreateUser.class.getSimpleName())
+		Message message = Message.builder()
+				.addAttr(RequestHeaders.MESSAGE_TYPE.value(), "COMMAND")
+				.addAttr(RequestHeaders.COMMAND.value(), CreateUser.class.getSimpleName())
 				.withData(createUser).build();
 
-		app.request("UserService", message)
+		server.request("UserService", message)
 				.subscribe(r -> System.out.println("Incoming response: " + r));
 
 
-		while (true) {
-			Thread.sleep(10000);
-		}
+		Thread.sleep(2000);
 	}
 }

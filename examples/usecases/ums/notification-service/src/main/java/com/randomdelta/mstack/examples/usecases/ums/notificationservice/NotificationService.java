@@ -1,6 +1,6 @@
 package com.randomdelta.mstack.examples.usecases.ums.notificationservice;
 
-import com.randomdelta.mstack.commons.injector.Injector;
+import com.randomdelta.mstack.common.injector.Injector;
 import com.randomdelta.mstack.core.ServiceProvider;
 import com.randomdelta.mstack.examples.usecases.ums.notificationservice.messages.event.UserCreated;
 import com.randomdelta.mstack.examples.usecases.ums.notificationservice.handlers.event.UserCreatedHandler;
